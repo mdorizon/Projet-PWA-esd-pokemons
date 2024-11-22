@@ -1,19 +1,30 @@
+import React from "react";
 import PokemonCard from "@/components/PokemonCard";
 import useGetPokemons from "@/hook/useGetPokemons";
-import styles from "@/styles/pokemonCard";
 import { PokemonDto } from "@/types/poke-types";
-import { FlatList, View } from "react-native";
+import { FlatList, View, Text, ActivityIndicator } from "react-native";
+import pokemonListStyles from "@/styles/pokemonList";
 
 export default function Index() {
-  const pokemons: PokemonDto[] = useGetPokemons()
+  const pokemons: PokemonDto[] = useGetPokemons();
+
+  if (!pokemons || pokemons.length === 0) {
+    return (
+      <View style={pokemonListStyles.loaderContainer}>
+        <ActivityIndicator size="large" color="#20639b" />
+        <Text style={pokemonListStyles.loaderText}>Chargement des Pokémon...</Text>
+      </View>
+    );
+  }
 
   return (
-    <View>
-      <FlatList 
+    <View style={pokemonListStyles.container}>
+      <FlatList
         data={pokemons}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <PokemonCard pokemon={item} />}
-        contentContainerStyle={styles.list}
+        renderItem={({ item }) => <PokemonCard pokemon={item} isHorizontal={false} />}
+        contentContainerStyle={pokemonListStyles.list}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

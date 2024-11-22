@@ -1,13 +1,8 @@
 import { StyleSheet } from "react-native";
 
 const pokemonCardStyles = StyleSheet.create({
-  list: {
-    paddingHorizontal: 16,
-  },
   card: {
-    backgroundColor: "#f6d55c",
     borderWidth: 3,
-    borderColor: "#ed553b",
     borderRadius: 16,
     marginBottom: 16,
     padding: 16,
@@ -17,20 +12,33 @@ const pokemonCardStyles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 8,
   },
+  horizontalCard: {
+    borderWidth: 3,
+    borderRadius: 16,
+    marginBottom: 16,
+    padding: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 8,
+    width: 250,
+    height: 250,
+  },
   cardHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 8,
   },
   pokemonName: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#3caea3",
   },
   pokedexId: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#20639b",
+    color: "#333",
   },
   pokemonImage: {
     width: 120,
@@ -46,7 +54,6 @@ const pokemonCardStyles = StyleSheet.create({
   typeBadge: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#20639b",
     borderRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 4,
@@ -60,18 +67,16 @@ const pokemonCardStyles = StyleSheet.create({
   typeText: {
     fontSize: 14,
     fontWeight: "500",
-    color: "#f6d55c",
+    color: "#fff",
   },
   statsContainer: {
     borderTopWidth: 2,
-    borderTopColor: "#ed553b",
     paddingTop: 8,
     marginTop: 8,
   },
   statsTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#20639b",
     marginBottom: 4,
   },
   statsText: {
@@ -79,6 +84,6 @@ const pokemonCardStyles = StyleSheet.create({
     color: "#333",
     marginBottom: 4,
   },
-});
+})
 
-export default pokemonCardStyles
+export default pokemonCardStyles;
