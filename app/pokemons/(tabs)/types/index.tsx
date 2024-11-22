@@ -4,6 +4,7 @@ import pokemonListStyles from "@/styles/pokemonList";
 import useGetPokemonTypes from "@/hook/useGetPokemonTypes";
 import { GeneralTypeDto } from "@/types/poke-types";
 import PokemonTypeCard from "@/components/PokemonTypeCard";
+import globalStyles from "@/styles/globalStyles";
 
 export default function Index() {
   const types: GeneralTypeDto[] = useGetPokemonTypes();
@@ -16,7 +17,7 @@ export default function Index() {
           <Text style={pokemonListStyles.loaderText}>Chargement des types...</Text>
         </View>
       ) : (
-        <View>          
+        <View style={globalStyles.typeListContainer}>          
           <FlatList
             data={types}
             keyExtractor={(item) => item.id.toString()}

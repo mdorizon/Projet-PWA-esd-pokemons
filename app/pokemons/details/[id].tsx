@@ -17,7 +17,11 @@ export default function Index() {
           <Text style={pokemonListStyles.loaderText}>Chargement du Pokémon...</Text>
         </View>
       ) : (
-        <PokemonCard pokemon={pokemon} isHorizontal={false} />
+        <View style={pokemonListStyles.container}>
+          <View style={pokemonListStyles.list}>
+            <PokemonCard pokemon={pokemon} isHorizontal={false} />
+          </View>
+        </View>
       )}
     </View>
   );

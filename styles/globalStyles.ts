@@ -12,6 +12,11 @@ const globalStyles = StyleSheet.create({
     alignItems: 'center',
     height: '100%',
   },
+  typeListContainer: {
+    display: "flex",
+    paddingTop: 40,
+    alignItems: 'center'
+  },
   content: {
     alignItems: 'center',
   },
@@ -25,7 +30,7 @@ const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: '100%'
+    width: '100%',
   },
   logo: {
     width: 50,

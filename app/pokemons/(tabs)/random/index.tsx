@@ -1,6 +1,5 @@
 import PokemonCard from "@/components/PokemonCard";
 import useGetPokemons from "@/hook/useGetPokemons";
-import globalStyles from "@/styles/globalStyles";
 import pokemonListStyles from "@/styles/pokemonList";
 import { PokemonDto } from "@/types/poke-types";
 import { View, ActivityIndicator, Text } from "react-native";
@@ -21,8 +20,10 @@ export default function Index() {
           <Text style={pokemonListStyles.loaderText}>Chargement du Pokémon...</Text>
         </View>
       ) : (
-          <View style={globalStyles.container}>
-            <PokemonCard pokemon={getRandomElement(pokemons)} isHorizontal={false}/>
+          <View style={pokemonListStyles.container}>
+            <View style={pokemonListStyles.list}>
+              <PokemonCard pokemon={getRandomElement(pokemons)} isHorizontal={false}/>
+            </View>
           </View>
       )}
     </View>
