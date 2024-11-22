@@ -28,6 +28,14 @@ export default function CocktailsLayout() {
         }}
       />
       <Tabs.Screen 
+        name="fight-screen/index" 
+        options={{
+          title: "Pokémon Fight",
+          tabBarIcon: ({ focused }) => <Ionicons name={focused ? 'flame' : 'flame-outline'} size={24} color={"#FF0000"}/>,
+          tabBarActiveTintColor: '#FF0000',
+        }}
+      />
+      <Tabs.Screen 
         name="types" 
         options={{
           headerShown: false,
