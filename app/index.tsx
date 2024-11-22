@@ -7,7 +7,7 @@ import pokemonListStyles from "@/styles/pokemonList";
 import { GeneralTypeDto, PokemonDto } from "@/types/poke-types";
 import { router } from "expo-router";
 import { useState } from "react";
-import { ScrollView, Text, View, Image, TextInput, TouchableOpacity, ActivityIndicator, Button } from "react-native";
+import { ScrollView, Text, View, Image, TextInput, TouchableOpacity, ActivityIndicator } from "react-native";
 
 export default function Index() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -19,11 +19,7 @@ export default function Index() {
   }
   
   const handleNavigateToTypes = () => {
-    router.push('/poke-types')
-  }
-  
-  const handleNavigateToRandomPokemon = () => {
-    router.push('/pokemons/random')
+    router.push('/pokemons/types')
   }
 
   const handleSearch = () => {
@@ -73,9 +69,6 @@ export default function Index() {
           </TouchableOpacity>
         </View>
         <Image style={globalStyles.logoTitle} source={require('@/assets/images/PokeDev.png')}/>
-        <TouchableOpacity onPress={handleNavigateToRandomPokemon}>
-          <Text style={globalStyles.h1}>Pokemon Random</Text>
-        </TouchableOpacity>
         <ScrollView contentContainerStyle={globalStyles.scrollContent}>
           {/* Pokemons list */}
           <View style={[globalStyles.content, globalStyles.mt]}>

@@ -37,7 +37,7 @@ const PokemonTypeCard = ({ type }: PokemonTypeCardProps) => {
   const cardColor = typeColors[type.name] || "#A8A878";
 
   const handleNavigateToPokemonByTypes = (type: string) => {
-    router.push(`/poke-types/list-types/${type}`)
+    router.push(`/pokemons/types/list-types/${type}`)
   }
 
   return (
